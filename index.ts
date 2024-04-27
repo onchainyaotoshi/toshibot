@@ -1,57 +1,31 @@
 import neynarClient from "./utils/neynarClient";
 import { NeynarFrameCreationRequest } from "@neynar/nodejs-sdk/build/neynar-api/v2";
+import express from "express";
 
-const server = Bun.serve({
-  port: 3000,
-  async fetch(req) {
-    try {
-      const body = await req.text();
-      const hookData = JSON.parse(body);
+import filter from './commands/index';
 
-      const creationRequest: NeynarFrameCreationRequest = {
-        name: `gm ${hookData.data.author.username}`,
-        pages: [
-          {
-            image: {
-              url: "https://moralis.io/wp-content/uploads/web3wiki/638-gm/637aeda23eca28502f6d3eae_61QOyzDqTfxekyfVuvH7dO5qeRpU50X-Hs46PiZFReI.jpeg",
-              aspect_ratio: "1:1",
-            },
-            title: "Page title",
-            buttons: [],
-            input: {
-              text: {
-                enabled: false,
-              },
-            },
-            uuid: "gm",
-            version: "vNext",
-          },
-        ],
-      };
-      const frame = await neynarClient.publishNeynarFrame(creationRequest);
+const app = express();
+const port = 3000;
 
-      if (!process.env.SIGNER_UUID) {
-        throw new Error("Make sure you set SIGNER_UUID in your .env file");
-      }
+app.use(express.json()); // for parsing application/json
 
-      const reply = await neynarClient.publishCast(
-        process.env.SIGNER_UUID,
-        `gm ${hookData.data.author.username}`,
-        {
-          embeds: [
-            {
-              url: frame.link,
-            },
-          ],
-          replyTo: hookData.data.hash,
-        }
-      );
-
-      return new Response(`Replied to the cast with hash: ${reply.hash}`);
-    } catch (e: any) {
-      return new Response(e.message, { status: 500 });
-    }
-  },
+app.get("/", (req, res) => {
+  console.log("it's working");
+  return res.send("it's working!");
 });
 
-console.log(`Listening on localhost:${server.port}`);
+app.post("/", async (req, res) => {
+  try {
+    const hash = await filter(req.body.data);
+
+    return res.status(200).send(`Replied to the cast with hash: ${hash}`);
+  } catch (e: any) {
+    return res.status(500).json({
+      message: e.message,
+    });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`);
+});

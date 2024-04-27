@@ -1,0 +1,34 @@
+{
+  created_at: 1714245495,
+  type: 'cast.created',
+  data: {
+    object: 'cast',
+    hash: '0x3986f55fa8244f1fc0b621f5e57bc369b6a22dbb',
+    thread_hash: '0x3986f55fa8244f1fc0b621f5e57bc369b6a22dbb',
+    parent_hash: null,
+    parent_url: null,
+    root_parent_url: null,
+    parent_author: { fid: null },
+    author: {
+      object: 'user',
+      fid: 224707,
+      custody_address: '0x4576bc75d1e15d00fa81926f5d285854fa8da9bd',
+      username: 'firman',
+      display_name: 'Firman',
+      pfp_url: 'https://i.imgur.com/rv35dtz.jpg',
+      profile: [Object],
+      follower_count: 31,
+      following_count: 37,
+      verifications: [],
+      verified_addresses: [Object],
+      active_status: 'inactive',
+      power_badge: false
+    },
+    text: 'gm farcasterframesbot 2 tst',
+    timestamp: '2024-04-27T19:18:13.000Z',
+    embeds: [],
+    reactions: { likes_count: 0, recasts_count: 0, likes: [], recasts: [] },
+    replies: { count: 0 },
+    mentioned_profiles: []
+}
+}

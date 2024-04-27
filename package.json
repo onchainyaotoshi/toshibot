@@ -1,17 +1,20 @@
 {
-  "name": "farcaster-bot",
-  "module": "index.ts",
+  "name": "toshibot",
   "type": "module",
   "scripts": {
-    "start": "bun run index.ts"
+    "start:live": "tsx index.ts"
   },
   "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.3.0",
+    "nodemon": "^3.1.0",
+    "tsx": "^3.12.2",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@neynar/nodejs-sdk": "^1.13.1"
+    "@neynar/nodejs-sdk": "^1.13.1",
+    "express": "^4.19.2"
   }
 }
