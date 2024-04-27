@@ -6,6 +6,7 @@ import rubik from './rubik';
 import bmc from './bmc';
 import tip from './tip';
 import meow from './meow';
+import contact from './contact';
 
 export default async (data: any): Promise<string>=>{
   if(data.text.includes('/filters')){
@@ -24,6 +25,8 @@ export default async (data: any): Promise<string>=>{
     return await tip(data);
   }else if(data.text.includes('/meow')){
     return await meow(data);
+  }else if(data.text.includes('/contact')){
+    return await contact(data);
   }
 
   return "";

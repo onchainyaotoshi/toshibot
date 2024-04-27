@@ -3,11 +3,11 @@ import neynarClient from "../utils/neynarClient";
 export default async(data: any): Promise<string>=>{
   const reply = await neynarClient.publishCast(
     process.env.SIGNER_UUID!,
-    `Here's the link of active meow DAO proposal`,
+    `The owner of this bot:`,
     {
       embeds: [
         {
-          url:"https://frames.neynar.com/f/fad8b4e7/ca765f6a",
+          url: "https://frames.neynar.com/f/5311c7b4/0bd91320",
         },
       ],
       replyTo: data.hash,

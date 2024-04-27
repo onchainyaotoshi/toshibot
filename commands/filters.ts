@@ -11,7 +11,8 @@ export default async(data: any): Promise<string>=>{
 /rubik - play to earn rubik's cube.
 /bmc - receive $TOSHI directly on frame.
 /tip - Tip 😺 ($TOSHI) action.
-/meow - link to active Meow DAO proposal
+/meow - active Meow DAO proposal.
+/dev - about the dev.
     `,
     {
       replyTo: data.hash,
