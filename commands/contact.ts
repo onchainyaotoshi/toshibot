@@ -3,7 +3,7 @@ import neynarClient from "../utils/neynarClient";
 export default async(data: any): Promise<string>=>{
   const reply = await neynarClient.publishCast(
     process.env.SIGNER_UUID!,
-    `The owner of this bot:`,
+    `Contact me: @yaotoshi`,
     {
       embeds: [
         {

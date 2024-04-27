@@ -12,7 +12,7 @@ export default async(data: any): Promise<string>=>{
 /bmc - receive $TOSHI directly on frame.
 /tip - Tip 😺 ($TOSHI) action.
 /meow - active Meow DAO proposal.
-/dev - about the dev.
+/contact - to contact the dev.
     `,
     {
       replyTo: data.hash,
