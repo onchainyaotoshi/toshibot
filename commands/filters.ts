@@ -5,14 +5,14 @@ export default async(data: any): Promise<string>=>{
     process.env.SIGNER_UUID!,
     `
 /filters - To show all filter commands.
-/fid - to show your fid.
-/buy - to buy $TOSHI directly on frame.
+/fid
+/buy
 /poll - to create a poll directly on frame.
 /rubik - play to earn rubik's cube.
-/bmc - receive $TOSHI directly on frame.
+/bmc - Tip 😺 $TOSHI frame.
 /tip - Tip 😺 ($TOSHI) action.
 /meow - active Meow DAO proposal.
-/contact - to contact the dev.
+/contact
     `,
     {
       replyTo: data.hash,
