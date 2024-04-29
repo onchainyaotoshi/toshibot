@@ -19,8 +19,6 @@ export default async (data: any): Promise<string>=>{
     return await rubik(data);
   }else if(data.text.includes('/fid')){
     return await fid(data);
-  }else if(data.text.includes('/bmc')){
-    return await bmc(data);
   }else if(data.text.includes('/tip')){
     return await tip(data);
   }else if(data.text.includes('/meow')){

@@ -9,7 +9,6 @@ export default async(data: any): Promise<string>=>{
 /buy
 /poll - to create a poll directly on frame.
 /rubik - play to earn rubik's cube.
-/bmc - buy me a coffee.
 /tip - Tip 😺 ($TOSHI) action.
 /meow - active Meow DAO proposal.
 /contact
